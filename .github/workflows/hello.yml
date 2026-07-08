@@ -1,0 +1,12 @@
+name: Hello Actions Test
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch: {}
+
+jobs:
+  hosted:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "GitHub-hosted runner on github.com works"
