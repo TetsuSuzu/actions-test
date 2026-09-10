@@ -23,3 +23,8 @@ jobs:
           echo "Runner OS: $RUNNER_OS"
           pwd
           ls -la
+
+      - name: Run CI test
+        run: |
+          test -f .github/workflows/hello.yml
+          echo "CI test passed"
