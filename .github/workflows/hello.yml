@@ -8,5 +8,18 @@ on:
 jobs:
   hosted:
     runs-on: ubuntu-latest
+
     steps:
-      - run: echo "GitHub-hosted runner on github.com works"
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Show runner message
+        run: echo "GitHub-hosted runner on github.com works"
+
+      - name: Inspect repository
+        run: |
+          echo "Repository: ${{ github.repository }}"
+          echo "Branch: ${{ github.ref_name }}"
+          echo "Runner OS: $RUNNER_OS"
+          pwd
+          ls -la
